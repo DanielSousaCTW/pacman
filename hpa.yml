@@ -8,7 +8,6 @@ metadata:
   labels:
     app.kubernetes.io/instance: pacman-app
   name: pacman
-  namespace: pacman
   resourceVersion: "41509"
   uid: cee3ca48-2696-4d9f-97ef-833a342dc7b3
 spec:
