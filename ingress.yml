@@ -9,8 +9,6 @@ metadata:
   labels:
     app.kubernetes.io/instance: pacman-app
   name: pacman
-  resourceVersion: "41512"
-  uid: 0d326399-b80a-418e-ae0b-fcb812840abf
 spec:
   ingressClassName: nginx
   rules:
