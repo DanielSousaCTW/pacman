@@ -20,5 +20,7 @@ spec:
       containers:
       - image: ghcr.io/danielsousactw/pacman:2.0
         name: pacman
-        resources: {}
+        resources:
+          requests:
+            cpu: "1m"
 status: {}
