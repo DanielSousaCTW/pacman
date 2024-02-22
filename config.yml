@@ -10,8 +10,6 @@ metadata:
   labels:
     app: pacman
   name: pacman
-  resourceVersion: "31153"
-  uid: 3ac2991e-e450-4fe8-adb0-2520fd2b48ce
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
