@@ -16,4 +16,4 @@ spec:
           service:
             name: pacman
             port:
-              number: 8080
+              number: 80
