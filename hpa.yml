@@ -1,7 +1,6 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  creationTimestamp: "2024-02-22T14:50:10Z"
   name: pacman
 spec:
   maxReplicas: 100
@@ -17,20 +16,3 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: pacman
-status:
-  conditions:
-  - lastTransitionTime: "2024-02-22T14:50:16Z"
-    message: the HPA controller was able to get the target's current scale
-    reason: SucceededGetScale
-    status: "True"
-    type: AbleToScale
-  - lastTransitionTime: "2024-02-22T14:50:16Z"
-    message: 'the HPA was unable to compute the replica count: failed to get cpu utilization:
-      unable to get metrics for resource cpu: no metrics returned from resource metrics
-      API'
-    reason: FailedGetResourceMetric
-    status: "False"
-    type: ScalingActive
-  currentMetrics: null
-  currentReplicas: 1
-  desiredReplicas: 0
