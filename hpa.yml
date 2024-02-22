@@ -8,12 +8,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: hello
+      app: pacman
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: hello
+        app: pacman
     spec:
       containers:
       - image: hashicorp/http-echo
