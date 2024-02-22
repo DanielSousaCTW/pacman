@@ -4,7 +4,6 @@ metadata:
   labels:
     app: pacman-app
   name: pacman
-  namespace: default
 spec:
   selector:
     matchLabels:
