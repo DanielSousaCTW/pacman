@@ -1,25 +1,56 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+items:
+- apiVersion: autoscaling/v2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"autoscaling/v2","kind":"HorizontalPodAutoscaler","metadata":{"annotations":{},"creationTimestamp":"2024-02-21T13:06:49Z","labels":{"app.kubernetes.io/instance":"pacman-app"},"name":"pacman","namespace":"pacman-argo"},"spec":{"maxReplicas":5,"metrics":[{"resource":{"name":"cpu","target":{"averageUtilization":1,"type":"Utilization"}},"type":"Resource"}],"minReplicas":1,"scaleTargetRef":{"apiVersion":"apps/v1","kind":"Deployment","name":"pacman"}},"status":{"conditions":[{"lastTransitionTime":"2024-02-21T13:07:04Z","message":"recommended size matches current size","reason":"ReadyForNewScale","status":"True","type":"AbleToScale"},{"lastTransitionTime":"2024-02-22T11:17:55Z","message":"the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)","reason":"ValidMetricFound","status":"True","type":"ScalingActive"},{"lastTransitionTime":"2024-02-21T13:12:05Z","message":"the desired replica count is less than the minimum replica count","reason":"TooFewReplicas","status":"True","type":"ScalingLimited"}],"currentMetrics":[{"resource":{"current":{"averageUtilization":0,"averageValue":"0"},"name":"cpu"},"type":"Resource"}],"currentReplicas":1,"desiredReplicas":1,"lastScaleTime":"2024-02-22T11:23:25Z"}}
+    creationTimestamp: "2024-02-22T14:25:06Z"
+    labels:
+      app.kubernetes.io/instance: pacman-app
+    name: pacman
+  spec:
+    maxReplicas: 5
+    metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 1
+          type: Utilization
+      type: Resource
+    minReplicas: 1
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: pacman
+  status:
+    conditions:
+    - lastTransitionTime: "2024-02-22T14:25:21Z"
+      message: recommended size matches current size
+      reason: ReadyForNewScale
+      status: "True"
+      type: AbleToScale
+    - lastTransitionTime: "2024-02-22T14:26:51Z"
+      message: the HPA was able to successfully calculate a replica count from cpu
+        resource utilization (percentage of request)
+      reason: ValidMetricFound
+      status: "True"
+      type: ScalingActive
+    - lastTransitionTime: "2024-02-22T14:30:21Z"
+      message: the desired replica count is less than the minimum replica count
+      reason: TooFewReplicas
+      status: "True"
+      type: ScalingLimited
+    currentMetrics:
+    - resource:
+        current:
+          averageUtilization: 0
+          averageValue: "0"
+        name: cpu
+      type: Resource
+    currentReplicas: 1
+    desiredReplicas: 1
+kind: List
 metadata:
-  labels:
-    app: pacman-app
-  name: pacman
-spec:
-  selector:
-    matchLabels:
-      app: pacman
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: pacman
-    spec:
-      containers:
-      - image: hashicorp/http-echo
-        name: http-echo
-        ports:
-        - containerPort: 5678
-          protocol: TCP
-        resources:
-          requests:
-            cpu: 10m
+  resourceVersion: ""
