@@ -1,33 +1,29 @@
 apiVersion: v1
-items:
-- apiVersion: v1
-  kind: Service
-  metadata:
-    creationTimestamp: "2024-02-20T11:19:17Z"
-    labels:
-      app: pacman
-    name: pacman
-    namespace: pacman
-    resourceVersion: "971"
-    uid: f69ca734-513d-4ea0-aa65-f0adcfbc46b6
-  spec:
-    clusterIP: 10.98.188.222
-    clusterIPs:
-    - 10.98.188.222
-    internalTrafficPolicy: Cluster
-    ipFamilies:
-    - IPv4
-    ipFamilyPolicy: SingleStack
-    ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 80
-    selector:
-      app: pacman
-    sessionAffinity: None
-    type: ClusterIP
-  status:
-    loadBalancer: {}
-kind: List
+kind: Service
 metadata:
-  resourceVersion: ""
+  creationTimestamp: "2024-02-20T11:19:17Z"
+  labels:
+    app: pacman
+    app.kubernetes.io/instance: pacman-app
+  name: pacman
+  namespace: pacman
+  resourceVersion: "41482"
+  uid: f69ca734-513d-4ea0-aa65-f0adcfbc46b6
+spec:
+  clusterIP: 10.98.188.222
+  clusterIPs:
+  - 10.98.188.222
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: pacman
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
