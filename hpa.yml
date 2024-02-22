@@ -45,8 +45,8 @@ items:
     currentMetrics:
     - resource:
         current:
-          averageUtilization: 0
-          averageValue: "0"
+          averageUtilization: 50
+          averageValue: "50"
         name: cpu
       type: Resource
     currentReplicas: 1
