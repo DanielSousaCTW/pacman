@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2024-02-22T14:50:10Z"
   name: pacman
 spec:
-  maxReplicas: 5
+  maxReplicas: 100
   metrics:
   - resource:
       name: cpu
