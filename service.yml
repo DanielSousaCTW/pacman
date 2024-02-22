@@ -6,8 +6,6 @@ metadata:
     app: pacman
     app.kubernetes.io/instance: pacman-app
   name: pacman
-  resourceVersion: "41482"
-  uid: f69ca734-513d-4ea0-aa65-f0adcfbc46b6
 spec:
   clusterIP: 10.98.188.222
   clusterIPs:
