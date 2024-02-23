@@ -20,6 +20,8 @@ spec:
       containers:
       - image: ghcr.io/danielsousactw/pacman:2.0
         name: pacman
+        ports:
+         - containerPort: 80
         resources:
           requests:
             cpu: "1m"
